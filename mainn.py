@@ -2,6 +2,7 @@ import easyocr
 import cv2
 import os
 from parser import get_store_name, get_date, total_amount
+from output.save import save_receipt
 
 reader = easyocr.Reader(['en'])
 
@@ -43,3 +44,5 @@ print("\n===== Parsed Receipt =====")
 print(f"Store : {store}")
 print(f"Date  : {date}")
 print(f"Total : ₹{total}")
+
+save_receipt(store, date, total)    
